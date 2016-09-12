@@ -4,7 +4,7 @@
 // =================================
 
 var path = require('path');
-var dbConfig = require(path.join(__dirname, '../../../../config/databases/datasources.json')).mailmerge;
+var dbConfig = require(path.join(__dirname, '../../../../../config/databases/datasources.json')).mailmerge;
 // Bookshelf connection options
 var bookshelf = {};
 
