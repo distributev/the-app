@@ -9,16 +9,6 @@
     }
   },
     {
-      "key": "email.to",
-      "type": "horizontalInput",
-      "templateOptions": {
-        "label": "To",
-        "type":"email"
-
-      }
-
-    },
-    {
       "key": "clientfulldetails",
       "type": "textarea",
       "templateOptions": {
