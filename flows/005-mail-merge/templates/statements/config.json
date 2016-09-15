@@ -12,7 +12,7 @@
         "authrequired": false
 	},
     "email": {
-        "sendemail":true,
+        "sendemail": false,
         "sendhtmlemail": false,
         "to": "distributev@gmail.com",
         "cc": "",
@@ -20,10 +20,7 @@
         "subject": "Statement for {{merge.date | date:'MMM, yyyy'}}",
         "text": "Hi {{merge.name}}, Please download your PDF from {{merge.pdf_permalink}}.\nPlease find attached the correct statement.",
         "html": "email.html",
-        "attachments": [
-            "{{merge.pdf_file_path}}",
-            "C:/test/hardcoded-file.txt"
-        ]
+        "attachments": "{{merge.pdf_file_path}}"
 	},
     "smtp": {
         "host": "",

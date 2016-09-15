@@ -44,7 +44,7 @@
 								</div>
 
 								<div class="form-scroll">
-									<div class="email" ng-show="sendEmail">
+									<div>
 										<div>
 											<div class="margin-15" id="{{formId}}">
 												<form>
@@ -58,7 +58,7 @@
 							</div>
 
 							<div  class="col-xs-8" style="padding-left:0" >
-								<div style="height: 230px">
+								<div style="height: 230px" ng-show="sendemail">
 									<div class="col-xs-4">
 										<div class="form-group margin-15">
 											<label class="control-label">To</label>
@@ -107,8 +107,8 @@
 
 
 
-						<div class=" col-md-12"  style="height:470px;padding-left: 0" ng-show="mailMerge.document.generatepdf">
-							<iframe frameborder="0"  scrolling="yes" class="doc-scroll col-xs-12 padding-right-clear" id="{{docIframe}}">
+						<div class=" col-md-12"  style="height: {{documentheight}};padding-left: 0" ng-show="mailMerge.document.generatepdf">
+							<iframe frameborder="0" style="height: {{frameheight}}" scrolling="yes" class="doc-scroll col-xs-12 padding-right-clear" id="{{docIframe}}">
 
 							</iframe>
 

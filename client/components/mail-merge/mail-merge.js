@@ -196,8 +196,17 @@ angular.module('angularFullstackApp')
 
           $scope.invalidTo = false;
 
-          $scope.sendEmail = $scope.mailMerge.email.sendemail;
+          $scope.sendemail = $scope.mailMerge.email.sendemail;
           $scope.sendhtml = $scope.mailMerge.email.sendhtmlemail;
+
+          $scope.documentheight = "700px";
+          $scope.frameheight = "680px";
+
+          if ($scope.sendemail)
+          {
+            $scope.documentheight = "470px";
+            $scope.frameheight  = "450px";
+          }
 
           // var renderEmail = function(){
             setTimeout(function(){
