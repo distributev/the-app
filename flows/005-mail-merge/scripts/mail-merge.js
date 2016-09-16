@@ -56,10 +56,16 @@ queue.process('mail-merge', function(job, done){
       }
     })
     .then(data => {
-      return sendEmailJob.create(data.attributes);
+      var sendemail = JSON.parse(data.attributes.additional_data1).email.sendemail;
+      if (sendemail) {
+        return sendEmailJob.create(data.attributes);
+      }
+      else {
+        return Promise.resolve(data);
+      }
     })
     .then(data => {
-      if (data.status === 'failed') {
+      if (data.status && data.status === 'failed') {
         updateMergeStatus('failed', data.rowId, data.error)
           .then(() => {
             done(data.error);
@@ -68,8 +74,11 @@ queue.process('mail-merge', function(job, done){
             done(err);
           });
       }
-      else if (data.status === 'success') {
+      else if (data.status && data.status === 'success') {
         return updateEmailDataIntoDB(data.result, data.rowId);
+      }
+      else {
+        return Promise.resolve(data);
       }
     })
     .then(data => {

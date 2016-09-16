@@ -221,7 +221,7 @@ angular.module('angularFullstackApp')
                     var previewElement = angular.element(document.querySelectorAll('#' + $scope.textPreviewId));
                     previewElement.text(($interpolate($scope.mailMerge.email.text)($scope)));
                     $compile(previewElement)($scope);
-                  }
+                  };
                   $scope.$watchCollection('merge', compileTextPreview);
                 }
               }
@@ -485,9 +485,9 @@ angular.module('angularFullstackApp')
           transform();
         }
 
-        if(!$scope.sendEmail){
-          return;
-        }
+        // if(!$scope.sendEmail){
+        //   return;
+        // }
 
         setTimeout(function(){
 
